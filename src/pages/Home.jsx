@@ -3,10 +3,7 @@ import { BooksContent } from "../components";
 
 function Home() {
   return (
-    <div
-      className=" align-content mt-10
-    "
-    >
+    <div className="align-content mt-10">
       <BooksContent />
     </div>
   );
