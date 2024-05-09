@@ -1,5 +1,9 @@
 //react-router-dom
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 
 //components
 import { ProtectedRoutes } from "./components";
@@ -11,11 +15,12 @@ import MainLayout from "./layouts/MainLayout";
 import { Home, About, Create, Contact, Login, Signup } from "./pages";
 
 function App() {
+  const user = true;
   const routes = createBrowserRouter([
     {
       path: "/",
       element: (
-        <ProtectedRoutes user={true}>
+        <ProtectedRoutes user={user}>
           <MainLayout />
         </ProtectedRoutes>
       ),
@@ -38,8 +43,8 @@ function App() {
         },
       ],
     },
-    { path: "/login", element: <Login /> },
-    { path: "/signup", element: <Signup /> },
+    { path: "/login", element: user ? <Navigate to="/" /> : <Login /> },
+    { path: "/signup", element: user ? <Navigate to="/" /> : <Signup /> },
   ]);
   return <RouterProvider router={routes} />;
 }
