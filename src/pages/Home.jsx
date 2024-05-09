@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { BooksContent } from "../components";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div
+      className=" align-content mt-10
+    "
+    >
+      <BooksContent />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

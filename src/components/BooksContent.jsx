@@ -1,9 +1,12 @@
-import React from 'react'
-
+import BooksGrid from "./BooksGrid";
+import BooksList from "./BooksList";
 function BooksContent() {
   return (
-    <div>BooksContent</div>
-  )
+    <>
+      <BooksGrid />
+      <BooksList />
+    </>
+  );
 }
 
-export default BooksContent
+export default BooksContent;
