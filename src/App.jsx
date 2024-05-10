@@ -13,6 +13,7 @@ import MainLayout from "./layouts/MainLayout";
 
 //pages
 import { Home, About, Create, Contact, Login, Signup } from "./pages";
+import { loader as Bookloader } from "./pages/Home";
 
 function App() {
   const user = true;
@@ -28,6 +29,7 @@ function App() {
         {
           index: true,
           element: <Home />,
+          loader: Bookloader,
         },
         {
           path: "/about",
@@ -39,7 +41,7 @@ function App() {
         },
         {
           path: "/contact",
-          element: <Create />,
+          element: <Contact />,
         },
       ],
     },

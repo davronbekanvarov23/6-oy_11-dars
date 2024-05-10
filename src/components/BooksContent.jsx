@@ -1,7 +1,11 @@
-import React, { useState } from "react";
-import { TbLayoutList, TbLayoutGrid } from "react-icons/tb";
-import BooksGrid from "./BooksGrid"; // Assuming you have separate components for grid and list
+
+//components
+import BooksGrid from "./BooksGrid";
 import BooksList from "./BooksList";
+
+//react icons
+import { TbLayoutList, TbLayoutGrid } from "react-icons/tb";
+import { useState } from "react";
 
 function BooksContent() {
   const [layoutState, setLayoutState] = useState("grid");
