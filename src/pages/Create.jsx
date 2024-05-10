@@ -17,11 +17,19 @@ export const action = async ({ request }) => {
   let image = formData.get("image");
   let page = formData.get("page");
 
-  const newBook = { title, author, cover, description, genres, image, page };
+  // const newBook = {};
 
-  await addDoc(collection(db, "myBook"), { newBook });
+  await addDoc(collection(db, "myBook"), {
+    title,
+    author,
+    cover,
+    description,
+    genres,
+    image,
+    page,
+  });
 
-  return newBook;
+  return title, author, cover, description, genres, image, page;
 };
 
 function Create() {
@@ -41,8 +49,10 @@ function Create() {
         <FormInput name="description" label="description" type="text" />
         <FormInput name="genres" label="genres" type="text" />
         <FormInput name="image" label="Image" type="url" />
-        <FormInput name="page" label="Pages" type="number" />
-        <button type="submit" className="btn btn-block  btn-primary">add</button>
+        <FormInput name="page" label="Pages" type="text" />
+        <button type="submit" className="btn btn-block  btn-primary">
+          add
+        </button>
       </Form>
     </div>
   );
