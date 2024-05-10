@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const themes = {
   winter: "winter",
@@ -31,14 +31,18 @@ function Navbar() {
   }, [currentTheme]);
 
   return (
-    <nav className="bg-slate-100">
+    <nav className="bg-slate-500">
       <div className="align-content navbar">
         <div className="navbar-start">
-          <Link to="/" className="font-bold text-3xl">
+          <Link to="/" className="font-bold text-3xl text-orange-500">
             MyBook
           </Link>
         </div>
-        <div className="navbar-center ">2</div>
+        <div className="navbar-center ">
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/create">Create</Link>
+        </div>
         <div className="navbar-end">
           {/* Dark/light */}
           <label onClick={handleMode} className="swap swap-rotate">
