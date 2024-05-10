@@ -1,9 +1,19 @@
-import React from 'react'
 
-function FormInput() {
+function FormInput({ label, type, name }) {
   return (
-    <div>FormInput</div>
-  )
+    <label className="form-control w-full">
+      <div className="label">
+        <span className="label-text">{label}</span>
+      </div>
+
+      <input
+        type={type}
+        name={name}
+        placeholder="Type here"
+        className="input input-bordered w-full"
+      />
+    </label>
+  );
 }
 
-export default FormInput
+export default FormInput;
