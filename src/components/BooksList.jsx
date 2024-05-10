@@ -11,7 +11,7 @@ function BooksList() {
             key={info.id}
             className="card flex gap-2 items-center w-96 font-bold glass bg-slate-500 p-3"
           >
-            <img src={info.image} alt=""   />
+            <img src={info.image} alt="" width="300" height="300"   />
             <h1 className=" text-3xl font-bold text-center ">
               <span className=" text-red-400">{info.title}</span>
             </h1>
