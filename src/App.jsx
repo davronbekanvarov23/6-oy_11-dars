@@ -14,6 +14,7 @@ import MainLayout from "./layouts/MainLayout";
 //pages
 import { Home, About, Create, Contact, Login, Signup } from "./pages";
 import { loader as Bookloader } from "./pages/Home";
+import { action as CreateAction } from "./pages/Create";
 
 function App() {
   const user = true;
@@ -38,6 +39,7 @@ function App() {
         {
           path: "/create",
           element: <Create />,
+          action: CreateAction,
         },
         {
           path: "/contact",

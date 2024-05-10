@@ -38,7 +38,7 @@ function Navbar() {
             MyBook
           </Link>
         </div>
-        <div className="navbar-center ">
+        <div className="navbar-center gap-6 ">
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/create">Create</Link>

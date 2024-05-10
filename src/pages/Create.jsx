@@ -1,5 +1,10 @@
-import { Form } from "react-router-dom";
+import { Form, useActionData, useNavigate } from "react-router-dom";
 import { FormInput } from "../components";
+
+//firestore
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase/firebasaConfig";
+import { useEffect } from "react";
 
 //action
 export const action = async ({ request }) => {
@@ -11,10 +16,21 @@ export const action = async ({ request }) => {
   let genres = formData.get("genres");
   let image = formData.get("image");
   let page = formData.get("page");
-  return { title, author, cover, description, genres, image, page };
+
+  const newBook = { title, author, cover, description, genres, image, page };
+
+  await addDoc(collection(db, "myBook"), { newBook });
+
+  return newBook;
 };
 
 function Create() {
+  const navigate = useNavigate();
+  const actionData = useActionData();
+  useEffect(() => {
+    if (actionData) navigate("/");
+  }, [actionData]);
+
   return (
     <div className="align-content text-center pt-10">
       <div className="font-bold text-3xl mb-5"> Create new Book</div>
@@ -26,6 +42,7 @@ function Create() {
         <FormInput name="genres" label="genres" type="text" />
         <FormInput name="image" label="Image" type="url" />
         <FormInput name="page" label="Pages" type="number" />
+        <button type="submit" className="btn btn-block  btn-primary">add</button>
       </Form>
     </div>
   );

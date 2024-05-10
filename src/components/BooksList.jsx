@@ -28,9 +28,7 @@ function BooksList() {
             <p className="flex">
               genres:
               <span className=" text-yellow-300">
-                {info.genres.map((genre) => {
-                  return <p>#{genre}</p>;
-                })}
+                {info.genres}
               </span>
             </p>
             <p>

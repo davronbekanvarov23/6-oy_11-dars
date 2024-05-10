@@ -1,9 +1,8 @@
-import React from "react";
-import { db } from "../firebase/firebasaConfig";
-
 //components
 import { BooksContent } from "../components";
-import { collection, onSnapshot } from "firebase/firestore";
+import { onSnapshot, collection } from "firebase/firestore";
+import { db } from "../firebase/firebasaConfig";
+import { useCollection } from "../hooks/useCollection";
 
 export const loader = async () => {
   const books = [];
@@ -17,6 +16,8 @@ export const loader = async () => {
 };
 
 function Home() {
+  const { data } = useCollection(loader);
+  console.log(data);
   return (
     <div className="align-content mt-10">
       <BooksContent />

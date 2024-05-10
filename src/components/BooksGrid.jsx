@@ -1,9 +1,7 @@
-import React from "react";
 import { useLoaderData } from "react-router-dom";
 
 function BooksGrid() {
   const data = useLoaderData();
-  console.log(data);
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 pb-10">
@@ -28,12 +26,8 @@ function BooksGrid() {
               Cover: <span className=" text-yellow-300">{info.cover}</span>{" "}
             </p>
             <p className="flex">
-              genres: 
-              <span className=" text-yellow-300">
-                {info.genres.map((genre) => {
-                  return <p>#{genre}</p>;
-                })}
-              </span>
+              genres:
+              <span className=" text-yellow-300">{info.genres}</span>
             </p>
             <p>
               description:{" "}
